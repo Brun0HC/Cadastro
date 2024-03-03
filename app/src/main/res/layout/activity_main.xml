@@ -7,12 +7,174 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/cadastroTV"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Cadastro"
+        android:textSize="30sp"
+        android:textColor="#ffffff"
+        android:background="#7d02cf"
+        android:padding="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nomeCompletoTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nome_completo"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cadastroTV" />
+
+    <EditText
+        android:id="@+id/txtNomeCompleto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="nome completo"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nomeCompletoTV" />
+
+    <TextView
+        android:id="@+id/telefoneTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/telefone"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNomeCompleto" />
+
+    <EditText
+        android:id="@+id/txtTelefone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="telefone"
+        android:inputType="phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/telefoneTV" />
+
+    <TextView
+        android:id="@+id/emailTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/e_mail"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTelefone" />
+
+    <EditText
+        android:id="@+id/txtEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailTV" />
+
+
+    <CheckBox
+        android:id="@+id/checkBox_lista_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ingressar na lista de e-mails?"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
+
+    <TextView
+        android:id="@+id/sexoTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sexo"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/checkBox_lista_email"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroupSexo" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupSexo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sexoTV">
+
+        <RadioButton
+            android:id="@+id/buttonMasculino"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="masculino"
+            android:checked="true"/>
+
+        <RadioButton
+            android:id="@+id/buttonFeminino"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="feminino" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/cidadeTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cidade"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radioGroupSexo"
+        app:layout_constraintBottom_toTopOf="@+id/txtCidade" />
+
+    <EditText
+        android:id="@+id/txtCidade"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Cidade"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cidadeTV" />
+
+    <TextView
+        android:id="@+id/ufTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/uf"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtCidade"
+        app:layout_constraintBottom_toTopOf="@+id/spinnerUf" />
+
+    <Spinner
+        android:id="@+id/spinnerUf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:visibility="visible"
+        android:entries="@array/listaUf"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ufTV" />
+
+    <Button
+        android:id="@+id/btnSalvar"
+        android:layout_width="187dp"
+        android:layout_height="52dp"
+        android:layout_marginEnd="12dp"
+        android:text="@string/salvar"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerUf" />
+
+    <Button
+        android:id="@+id/btnLimpar"
+        android:layout_width="187dp"
+        android:layout_height="52dp"
+        android:text="@string/limpar"
+
+        app:layout_constraintEnd_toStartOf="@+id/btnSalvar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerUf" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
