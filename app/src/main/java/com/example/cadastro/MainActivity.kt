@@ -27,36 +27,14 @@ class MainActivity : AppCompatActivity() {
             var cidade = amb.txtCidade.text.toString()
             var uf = amb.spinnerUf.selectedItem.toString()
 
-
-
             formulario = Formulario(nomeCompleto, telefone, email, listaEmail, sexo, cidade, uf)
-//            formulario.nomeCompleto = amb.txtNomeCompleto.text.toString()
-//            formulario.telefone = amb.txtTelefone.text.toString()
-//            formulario.email = amb.txtEmail.text.toString()
-//            formulario.listaEmail = amb.checkBoxListaEmail.isChecked
-//            formulario.sexo = if(amb.radioGroupSexo.checkedRadioButtonId == 0) "Masculino" else "Feminino"
-//            formulario.cidade = amb.txtCidade.text.toString()
-//            amb.spinnerUf.onItemSelectedListener = object: AdapterView.OnItemSelectedListener{
-//                override fun onItemSelected(
-//                    parent: AdapterView<*>?,
-//                    view: View?,
-//                    position: Int,
-//                    id: Long
-//                ) {
-//                    formulario.uf = parent?.getItemAtPosition(position).toString()
-//                }
-//
-//                override fun onNothingSelected(parent: AdapterView<*>?) {
-//                    formulario.uf = "Piauí"
-//                }
-//            }
-//        }.also {
+
             Toast.makeText(
                 this@MainActivity,
                 formulario.toString(),
                 Toast.LENGTH_SHORT
             ).show()
-            }
+        }
 
         amb.btnLimpar.setOnClickListener {
             limparCampos()
